@@ -18,11 +18,10 @@ print(unique_data(data))
 
 
 def non_meeting(element):
-    max_number = max(element)
     check_number = 0
     new_array = []
     for i in element:
-        while check_number < max_number:
+        while check_number <=40:
             if element.count(check_number) == 0:
                 new_array.append(check_number)
             check_number += 1
