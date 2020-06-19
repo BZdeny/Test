@@ -11,6 +11,7 @@ def unique_data(element):
     return new_array
 
 
+print('Список уникальных чисел: ')
 print(unique_data(data))
 
 
@@ -21,11 +22,45 @@ def non_meeting(element):
     check_number = 0
     new_array = []
     for i in element:
-        while check_number <=40:
+        while check_number <= 40:
             if element.count(check_number) == 0:
                 new_array.append(check_number)
             check_number += 1
     return new_array
 
 
+print('Список чисел <=40, не встречающихся в списке: ')
 print(non_meeting(data))
+
+
+# 1.3
+
+
+def format_number_count(element):
+    dictionary = {}
+    for i in element:
+        dictionary[i] = element.count(i)
+    list_items = list(dictionary.items())
+    list_items.sort(key=lambda x: (x[1], x[0]), reverse=True)
+    return list_items
+
+
+print('Сортировка по убыванию в формате (num: num_count): ')
+print(format_number_count(data))
+
+
+# 1.4
+
+
+def standard_deviation(element):
+    import math
+    summ = 0
+    arith_mean = sum(element)/len(element)
+    for i in element:
+        summ += (i-arith_mean) ** 2
+    deviation = math.sqrt(summ/len(element))
+    return deviation
+
+
+print('СКО:')
+print('%.3f' % standard_deviation(data))
